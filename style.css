@@ -1,0 +1,100 @@
+/* CSS Variables */
+:root {
+    --main-bg: #f0f4f8;
+    --primary-color: #007bff;
+    --hover-color: #0056b3;
+    --text-color: #333;
+    --border-radius: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    width: 320px;
+    position: relative;
+}
+
+/* Decorative pseudo-element */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: bounce 3s infinite;
+}
+
+/* Form */
+h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Animated Button */
+.animated-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.animated-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Student List Styling */
+#studentList {
+    margin-top: 20px;
+}
+
+.student-card {
+    background: #e3f2fd;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.student-card:hover {
+    transform: translateX(5px);
+}
